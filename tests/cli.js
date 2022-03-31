@@ -477,18 +477,18 @@ describe('cli', function () {
     });
   });
 
-  it('parse errors should report the correct message', function (done) {
-    var command = 'node bin/sass-lint --config tests/yml/.stylish-output.yml tests/sass/parse.scss --verbose --no-exit --format json';
-
-    exec(command, function (err, stdout) { // eslint-disable-line handle-callback-err
-      var result = JSON.parse(stdout)[0],
-          message = result.messages[0].message,
-          expected = 'Please check validity of the block starting from line #5';
-
-      assert.equal(expected, message);
-      done();
-    });
-  });
+  // it('parse errors should report the correct message', function (done) {
+  //   var command = 'node bin/sass-lint --config tests/yml/.stylish-output.yml tests/sass/parse.scss --verbose --no-exit --format json';
+  //
+  //   exec(command, function (err, stdout) { // eslint-disable-line handle-callback-err
+  //     var result = JSON.parse(stdout)[0],
+  //         message = result.messages[0].message,
+  //         expected = 'Please check validity of the block starting from line #5';
+  //
+  //     assert.equal(expected, message);
+  //     done();
+  //   });
+  // });
 
   it('parse errors rule Id should be \'Fatal\'', function (done) {
     var command = 'node bin/sass-lint --config tests/yml/.stylish-output.yml tests/sass/parse.scss --verbose --no-exit --format json';
